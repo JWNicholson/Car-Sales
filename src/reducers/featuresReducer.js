@@ -16,10 +16,34 @@ export const initialState = {
       { id: 3, name: 'Premium sound system', price: 500 },
       { id: 4, name: 'Rear spoiler', price: 250 }
     ]
-}
+};
 
 export const featuresReducer = (state = initialState, action) => {
+        //ADD_ITEM,REMOVE_ITEM id, price
+    switch(action.type){
+        case "ADD_ITEM":
+            return {
+                ...state,
+                car: {
+                    ...state.car,
+                    price: (state.car.price + action.payload.price),
+                    features: [...state.car.features, action.payload]
+                }
+            };
 
-}
+         case "REMOVE_ITEM":
+         return {
+             ...state,
+             car: {
+                 ...state.car,
+                 price: (state.car.price - action.payload.price),
+                 features: state.car.features.filter(
+                     item => item.id !== action.payload.id
+                 )
+             }
+         };
+         default: return state;
+    }
+};
 
 
