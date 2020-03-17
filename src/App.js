@@ -23,7 +23,7 @@ const App = props => {
   };
 
   return (
-    <Provider store={store}>
+    
     <div className="boxes">
       <div className="box">
         <Header car={state.car} />
@@ -34,7 +34,7 @@ const App = props => {
         <Total car={state.car} additionalPrice={state.additionalPrice} />
       </div>
     </div>
-    </Provider>
+    
   );
 };
 
