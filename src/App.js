@@ -5,6 +5,7 @@ import Header from "./components/Header";
 import AddedFeatures from "./components/AddedFeatures";
 import AdditionalFeatures from "./components/AdditionalFeatures";
 import Total from "./components/Total";
+import Hero from './components/Hero'
 
 const App = props => {
   const removeFeature = item => {
@@ -18,7 +19,11 @@ const App = props => {
   };
 
   return (
+    <>
+    <Hero />
     <div className="boxes">
+
+
       <div className="box">
         <Header car={props.car} />
         <AddedFeatures car={props.car} removeFeature={removeFeature} />
@@ -31,6 +36,7 @@ const App = props => {
         <Total car={props.car} additionalPrice={props.additionalPrice} />
       </div>
     </div>
+    </>
   );
 };
 
