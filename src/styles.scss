@@ -1,6 +1,17 @@
 html, body, #root {
   height: 100%;
 }
+h1{
+  font-size: 2rem;
+  color:firebrick;
+  font-weight: bolder;
+}
+
+div.hero-body{
+  max-height:540px;
+  margin-bottom: 0;
+}
+
 body {
   background: #333;
   margin: 0;
